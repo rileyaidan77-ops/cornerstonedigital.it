@@ -86,7 +86,40 @@
         <p style="font-size: 1.1rem; color: #fff; margin-bottom: 30px;">Email: <a href="mailto:contact@cornerstonedigital.io" style="color: #007bff; text-decoration: none;">contact@cornerstonedigital.io</a></p>
         <p style="font-size: 0.9rem; color: #666;">&copy; 2026 Cornerstone Digital. All rights reserved.</p>
     </footer>
+<!-- CONTACT / FOOTER SECTION WITH FORM -->
+    <section id="contact" style="padding: 60px 20px; background: #111; color: #aaa; text-align: center;">
+        <div style="max-width: 600px; margin: 0 auto;">
+            <h2 style="font-size: 2rem; color: #fff; margin-bottom: 10px;">Ready to Scale Your Business?</h2>
+            <p style="margin-bottom: 30px;">Fill out the form below to get in touch, and we'll respond within 24 hours.</p>
+            
+            <!-- Contact Form -->
+            <form action="https://formsubmit.co/contact@cornerstonedigital.io" method="POST" style="display: flex; flex-direction: column; gap: 15px; text-align: left;">
+                
+                <!-- Disable Captcha / Optional Configuration -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="New Lead from Cornerstone Digital Website!">
+                
+                <div>
+                    <label for="name" style="display: block; font-size: 0.9rem; color: #fff; margin-bottom: 5px;">Your Name</label>
+                    <input type="text" id="name" name="name" required placeholder="John Doe" style="width: 100%; padding: 12px; border-radius: 5px; border: 1px solid #333; background: #222; color: #fff; box-sizing: border-box;">
+                </div>
 
+                <div>
+                    <label for="email" style="display: block; font-size: 0.9rem; color: #fff; margin-bottom: 5px;">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="john@example.com" style="width: 100%; padding: 12px; border-radius: 5px; border: 1px solid #333; background: #222; color: #fff; box-sizing: border-box;">
+                </div>
+
+                <div>
+                    <label for="message" style="display: block; font-size: 0.9rem; color: #fff; margin-bottom: 5px;">Project Details / Message</label>
+                    <textarea id="message" name="message" rows="4" required placeholder="Tell us about your business and goals..." style="width: 100%; padding: 12px; border-radius: 5px; border: 1px solid #333; background: #222; color: #fff; box-sizing: border-box; resize: vertical;"></textarea>
+                </div>
+
+                <button type="submit" style="background: #007bff; color: #fff; padding: 14px; border: none; border-radius: 5px; font-weight: bold; font-size: 1rem; cursor: pointer; transition: background 0.2s;">Send Message</button>
+            </form>
+
+            <p style="font-size: 0.9rem; color: #666; margin-top: 40px;">&copy; 2026 Cornerstone Digital. All rights reserved.</p>
+        </div>
+    </section>
 </body>
 </html>
 
