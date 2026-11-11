@@ -2,164 +2,89 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-<meta name="robots" content="noindex, nofollow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cornerstone Digital | Web Design for Wilmington Small Businesses</title>
-    <style>
-        :root {
-            --primary: #1e3a8a;
-            --primary-dark: #1e293b;
-            --accent: #2563eb;
-            --bg-light: #f8fafc;
-            --text-dark: #0f172a;
-            --text-muted: #475569;
-        }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: var(--text-dark); line-height: 1.6; background-color: #fff; }
-        
-        /* Header */
-        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; max-width: 1200px; margin: 0 auto; }
-        .logo { font-weight: 800; font-size: 1.25rem; color: var(--primary); letter-spacing: -0.5px; }
-        .nav-cta { background: var(--primary); color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: background 0.2s; }
-        .nav-cta:hover { background: var(--accent); }
-
-        /* Hero */
-        .hero { text-align: center; padding: 80px 20px 60px; max-width: 900px; margin: 0 auto; }
-        .badge { display: inline-block; background: #e0f2fe; color: #0369a1; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 20px; }
-        h1 { font-size: 3rem; color: var(--primary-dark); line-height: 1.15; margin-bottom: 20px; letter-spacing: -1px; }
-        .hero p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto; }
-        .btn-primary { display: inline-block; background: var(--accent); color: white; padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1.05rem; box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3); transition: transform 0.2s, background 0.2s; }
-        .btn-primary:hover { background: #1d4ed8; transform: translateY(-2px); }
-
-        /* Services Grid */
-        .services { background: var(--bg-light); padding: 80px 20px; }
-        .container { max-width: 1100px; margin: 0 auto; }
-        .section-title { text-align: center; font-size: 2.2rem; margin-bottom: 15px; color: var(--primary-dark); }
-        .section-subtitle { text-align: center; color: var(--text-muted); margin-bottom: 50px; font-size: 1.1rem; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; }
-        .card h3 { font-size: 1.5rem; margin-bottom: 15px; color: var(--primary-dark); }
-        .card p { color: var(--text-muted); margin-bottom: 20px; }
-        .card ul { list-style: none; margin-bottom: 30px; }
-        .card ul li { padding: 8px 0; border-bottom: 1px solid #f1f5f9; color: var(--text-muted); font-size: 0.95rem; }
-        .card ul li::before { content: "✓ "; color: var(--accent); font-weight: bold; }
-
-        /* Footer */
-        footer { text-align: center; padding: 40px 20px; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid #e2e8f0; }
-
-        @media (max-width: 768px) {
-            h1 { font-size: 2.2rem; }
-            header { padding: 15px 20px; }
-            .hero { padding: 50px 15px; }
-        }
-    </style>
+    <meta name="robots" content="noindex, nofollow">
+    <title>Cornerstone Digital | Web Development & Digital Agency</title>
 </head>
-<section id="pricing" style="padding: 60px 20px; font-family: sans-serif; background-color: #f9f9f9; text-align: center;">
-    <h2 style="font-size: 2.5rem; margin-bottom: 10px; color: #111;">Simple, Transparent Pricing</h2>
-    <p style="font-size: 1.1rem; color: #666; margin-bottom: 40px;">Choose the growth package that fits your business needs.</p>
+<body style="margin: 0; font-family: sans-serif; color: #111; background-color: #fff; line-height: 1.6;">
 
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; max-width: 1200px; margin: 0 auto;">
-        
-        <!-- Package 1 -->
-        <div style="background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 30px; width: 300px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-align: left; display: flex; flex-direction: column; justify-content: space-between;">
-            <div>
-                <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: #111;">Starter Package</h3>
-                <p style="font-size: 2rem; font-weight: bold; color: #000; margin-bottom: 5px;">$800 <span style="font-size: 1rem; font-weight: normal; color: #666;">setup</span></p>
-                <p style="font-size: 1.1rem; color: #007bff; margin-bottom: 20px;">+ $300 / month hosting</p>
-                <ul style="list-style-type: disc; padding-left: 20px; color: #444; line-height: 1.6; margin-bottom: 30px;">
-                    <li>Basic professional website</li>
-                    <li>Domain purchase included</li>
-                    <li>Secure site hosting</li>
-                </ul>
-            </div>
-            <a href="#contact" style="background: #111; color: #fff; padding: 12px; text-align: center; border-radius: 5px; text-decoration: none; font-weight: bold;">Get Started</a>
-        </div>
-
-        <!-- Package 2 -->
-        <div style="background: #fff; border: 2px solid #007bff; border-radius: 8px; padding: 30px; width: 300px; box-shadow: 0 4px 12px rgba(0,123,255,0.15); text-align: left; display: flex; flex-direction: column; justify-content: space-between; position: relative;">
-            <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #007bff; color: #fff; padding: 4px 12px; font-size: 0.8rem; font-weight: bold; border-radius: 12px;">MOST POPULAR</div>
-            <div>
-                <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: #111;">Growth Package</h3>
-                <p style="font-size: 2rem; font-weight: bold; color: #000; margin-bottom: 5px;">$1,000 <span style="font-size: 1.0rem; font-weight: normal; color: #666;">setup</span></p>
-                <p style="font-size: 1.1rem; color: #007bff; margin-bottom: 20px;">+ $500 / month hosting</p>
-                <ul style="list-style-type: disc; padding-left: 20px; color: #444; line-height: 1.6; margin-bottom: 30px;">
-                    <li>Basic professional website</li>
-                    <li>Domain purchase included</li>
-                    <li>Secure site hosting</li>
-                    <li><strong>Two SEO optimized blog posts</strong></li>
-                </ul>
-            </div>
-            <a href="#contact" style="background: #007bff; color: #fff; padding: 12px; text-align: center; border-radius: 5px; text-decoration: none; font-weight: bold;">Get Started</a>
-        </div>
-
-        <!-- Package 3 -->
-        <div style="background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 30px; width: 300px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-align: left; display: flex; flex-direction: column; justify-content: space-between;">
-            <div>
-                <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: #111;">Scale Package</h3>
-                <p style="font-size: 2rem; font-weight: bold; color: #000; margin-bottom: 5px;">$1,000 <span style="font-size: 1.0rem; font-weight: normal; color: #666;">setup</span></p>
-                <p style="font-size: 1.1rem; color: #007bff; margin-bottom: 20px;">+ $800 / month hosting</p>
-                <ul style="list-style-type: disc; padding-left: 20px; color: #444; line-height: 1.6; margin-bottom: 30px;">
-                    <li>Basic professional website</li>
-                    <li>Domain purchase included</li>
-                    <li>Secure site hosting</li>
-                    <li><strong>One SEO optimized blog post per month</strong></li>
-                </ul>
-            </div>
-            <a href="#contact" style="background: #111; color: #fff; padding: 12px; text-align: center; border-radius: 5px; text-decoration: none; font-weight: bold;">Get Started</a>
-        </div>
-
-    </div>
-</section>
-    <body>
-
-    <header>
-        <div class="logo">Cornerstone Digital</div>
-        <a href="#contact" class="nav-cta">Free Site Audit</a>
+    <!-- HEADER / HERO SECTION -->
+    <header style="padding: 80px 20px; text-align: center; background: #111; color: #fff;">
+        <h1 style="font-size: 3rem; margin-bottom: 10px; letter-spacing: -1px;">Cornerstone Digital</h1>
+        <p style="font-size: 1.25rem; color: #aaa; max-width: 600px; margin: 0 auto 30px auto;">Professional web design and digital growth solutions for modern businesses in Wilmington, DE.</p>
+        <a href="#pricing" style="background: #007bff; color: #fff; padding: 12px 28px; border-radius: 5px; text-decoration: none; font-weight: bold; display: inline-block;">View Packages</a>
     </header>
 
-    <section class="hero">
-        <span class="badge">Wilmington, Delaware Web Design</span>
-        <h1>Websites Built to Last for Local Businesses</h1>
-        <p>Stop losing customers to outdated or missing web pages. Get a lightning-fast, mobile-first website that turns local searchers into paying clients—without the bloated agency price tag.</p>
-        <a href="mailto:contact@cornerstonedigital.io?subject=Free%20Website%20Audit%20Request" class="btn-primary">Claim Your Free Website Audit</a>
+    <!-- ABOUT SECTION -->
+    <section style="padding: 60px 20px; max-width: 800px; margin: 0 auto; text-align: center;">
+        <h2 style="font-size: 2rem; margin-bottom: 20px;">Built for Local Growth</h2>
+        <p style="font-size: 1.1rem; color: #555;">We help businesses establish a powerful online presence with clean code, fast performance, and transparent pricing. No bloat, no hidden fees—just high-performing websites designed to convert.</p>
     </section>
 
-    <section class="services" id="services">
-        <div class="container">
-            <h2 class="section-title">Simple, Transparent Packages</h2>
-            <p class="section-subtitle">Designed specifically for contractors, service providers, and local shops in New Castle County.</p>
-            
-            <div class="grid">
-                <div class="card">
-                    <h3>The Local Starter</h3>
-                    <p>Perfect for solo operators and new businesses needing an immediate, professional digital storefront.</p>
-                    <ul>
-                        <li>Lightning-Fast 1-Page Landing Page</li>
-                        <li>Mobile-First Responsive Design</li>
-                        <li>Direct Click-to-Call & Contact Form</li>
-                        <li>Basic Local SEO Setup</li>
-                    </ul>
-                    <a href="mailto:contact@cornerstonedigital.io?subject=Inquiry:%20Local%20Starter%20Package" style="color: var(--accent); font-weight: 600; text-decoration: none;">Get Started →</a>
-                </div>
+    <!-- PRICING SECTION -->
+    <section id="pricing" style="padding: 60px 20px; background-color: #f9f9f9; text-align: center;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 10px; color: #111;">Simple, Transparent Pricing</h2>
+        <p style="font-size: 1.1rem; color: #666; margin-bottom: 40px;">Choose the growth package that fits your business needs.</p>
 
-                <div class="card" style="border-color: var(--accent); position: relative;">
-                    <div style="position: absolute; top: -12px; right: 20px; background: var(--accent); color: white; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 20px;">MOST POPULAR</div>
-                    <h3>The Growth Presence</h3>
-                    <p>For established businesses ready to dominate local search and capture higher-value contracts.</p>
-                    <ul>
-                        <li>Multi-Page Website (Home, Services, About, Gallery)</li>
-                        <li>Advanced Local Google Maps Optimization</li>
-                        <li>Fast GitHub Hosting & SSL Security</li>
-                        <li>Priority Support & Maintenance</li>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; max-width: 1200px; margin: 0 auto;">
+            
+            <!-- Package 1 -->
+            <div style="background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 30px; width: 300px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-align: left; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: #111;">Starter Package</h3>
+                    <p style="font-size: 2rem; font-weight: bold; color: #000; margin-bottom: 5px;">$800 <span style="font-size: 1rem; font-weight: normal; color: #666;">setup</span></p>
+                    <p style="font-size: 1.1rem; color: #007bff; margin-bottom: 20px;">+ $300 / month hosting</p>
+                    <ul style="list-style-type: disc; padding-left: 20px; color: #444; line-height: 1.6; margin-bottom: 30px;">
+                        <li>Basic professional website</li>
+                        <li>Domain purchase included</li>
+                        <li>Secure site hosting</li>
                     </ul>
-                    <a href="mailto:contact@cornerstonedigital.io?subject=Inquiry:%20Growth%20Presence%20Package" style="color: var(--accent); font-weight: 600; text-decoration: none;">Get Started →</a>
                 </div>
+                <a href="#contact" style="background: #111; color: #fff; padding: 12px; text-align: center; border-radius: 5px; text-decoration: none; font-weight: bold;">Get Started</a>
             </div>
+
+            <!-- Package 2 -->
+            <div style="background: #fff; border: 2px solid #007bff; border-radius: 8px; padding: 30px; width: 300px; box-shadow: 0 4px 12px rgba(0,123,255,0.15); text-align: left; display: flex; flex-direction: column; justify-content: space-between; position: relative;">
+                <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #007bff; color: #fff; padding: 4px 12px; font-size: 0.8rem; font-weight: bold; border-radius: 12px;">MOST POPULAR</div>
+                <div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: #111;">Growth Package</h3>
+                    <p style="font-size: 2rem; font-weight: bold; color: #000; margin-bottom: 5px;">$1,000 <span style="font-size: 1.0rem; font-weight: normal; color: #666;">setup</span></p>
+                    <p style="font-size: 1.1rem; color: #007bff; margin-bottom: 20px;">+ $500 / month hosting</p>
+                    <ul style="list-style-type: disc; padding-left: 20px; color: #444; line-height: 1.6; margin-bottom: 30px;">
+                        <li>Basic professional website</li>
+                        <li>Domain purchase included</li>
+                        <li>Secure site hosting</li>
+                        <li><strong>Two SEO optimized blog posts</strong></li>
+                    </ul>
+                </div>
+                <a href="#contact" style="background: #007bff; color: #fff; padding: 12px; text-align: center; border-radius: 5px; text-decoration: none; font-weight: bold;">Get Started</a>
+            </div>
+
+            <!-- Package 3 -->
+            <div style="background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 30px; width: 300px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-align: left; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: #111;">Scale Package</h3>
+                    <p style="font-size: 2rem; font-weight: bold; color: #000; margin-bottom: 5px;">$1,000 <span style="font-size: 1.0rem; font-weight: normal; color: #666;">setup</span></p>
+                    <p style="font-size: 1.1rem; color: #007bff; margin-bottom: 20px;">+ $800 / month hosting</p>
+                    <ul style="list-style-type: disc; padding-left: 20px; color: #444; line-height: 1.6; margin-bottom: 30px;">
+                        <li>Basic professional website</li>
+                        <li>Domain purchase included</li>
+                        <li>Secure site hosting</li>
+                        <li><strong>One SEO optimized blog post per month</strong></li>
+                    </ul>
+                </div>
+                <a href="#contact" style="background: #111; color: #fff; padding: 12px; text-align: center; border-radius: 5px; text-decoration: none; font-weight: bold;">Get Started</a>
+            </div>
+
         </div>
     </section>
 
-    <footer id="contact">
-        <p>&copy; 2026 Cornerstone Digital. Proudly serving Wilmington and the First State.</p>
+    <!-- CONTACT / FOOTER SECTION -->
+    <footer id="contact" style="padding: 60px 20px; text-align: center; background: #111; color: #aaa;">
+        <h2 style="font-size: 2rem; color: #fff; margin-bottom: 10px;">Ready to Scale Your Business?</h2>
+        <p style="margin-bottom: 20px;">Get in touch to launch your new website.</p>
+        <p style="font-size: 1.1rem; color: #fff; margin-bottom: 30px;">Email: <a href="mailto:contact@cornerstonedigital.io" style="color: #007bff; text-decoration: none;">contact@cornerstonedigital.io</a></p>
+        <p style="font-size: 0.9rem; color: #666;">&copy; 2026 Cornerstone Digital. All rights reserved.</p>
     </footer>
 
 </body>
