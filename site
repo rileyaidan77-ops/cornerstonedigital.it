@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cornerstone Digital | Web Design for Wilmington Small Businesses</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-dark: #1e293b;
+            --accent: #2563eb;
+            --bg-light: #f8fafc;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: var(--text-dark); line-height: 1.6; background-color: #fff; }
+        
+        /* Header */
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; max-width: 1200px; margin: 0 auto; }
+        .logo { font-weight: 800; font-size: 1.25rem; color: var(--primary); letter-spacing: -0.5px; }
+        .nav-cta { background: var(--primary); color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: background 0.2s; }
+        .nav-cta:hover { background: var(--accent); }
+
+        /* Hero */
+        .hero { text-align: center; padding: 80px 20px 60px; max-width: 900px; margin: 0 auto; }
+        .badge { display: inline-block; background: #e0f2fe; color: #0369a1; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 20px; }
+        h1 { font-size: 3rem; color: var(--primary-dark); line-height: 1.15; margin-bottom: 20px; letter-spacing: -1px; }
+        .hero p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto; }
+        .btn-primary { display: inline-block; background: var(--accent); color: white; padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1.05rem; box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3); transition: transform 0.2s, background 0.2s; }
+        .btn-primary:hover { background: #1d4ed8; transform: translateY(-2px); }
+
+        /* Services Grid */
+        .services { background: var(--bg-light); padding: 80px 20px; }
+        .container { max-width: 1100px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: 2.2rem; margin-bottom: 15px; color: var(--primary-dark); }
+        .section-subtitle { text-align: center; color: var(--text-muted); margin-bottom: 50px; font-size: 1.1rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; }
+        .card h3 { font-size: 1.5rem; margin-bottom: 15px; color: var(--primary-dark); }
+        .card p { color: var(--text-muted); margin-bottom: 20px; }
+        .card ul { list-style: none; margin-bottom: 30px; }
+        .card ul li { padding: 8px 0; border-bottom: 1px solid #f1f5f9; color: var(--text-muted); font-size: 0.95rem; }
+        .card ul li::before { content: "✓ "; color: var(--accent); font-weight: bold; }
+
+        /* Footer */
+        footer { text-align: center; padding: 40px 20px; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid #e2e8f0; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            header { padding: 15px 20px; }
+            .hero { padding: 50px 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Cornerstone Digital</div>
+        <a href="#contact" class="nav-cta">Free Site Audit</a>
+    </header>
+
+    <section class="hero">
+        <span class="badge">Wilmington, Delaware Web Design</span>
+        <h1>Websites Built to Last for Local Businesses</h1>
+        <p>Stop losing customers to outdated or missing web pages. Get a lightning-fast, mobile-first website that turns local searchers into paying clients—without the bloated agency price tag.</p>
+        <a href="mailto:contact@cornerstonedigital.io?subject=Free%20Website%20Audit%20Request" class="btn-primary">Claim Your Free Website Audit</a>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Simple, Transparent Packages</h2>
+            <p class="section-subtitle">Designed specifically for contractors, service providers, and local shops in New Castle County.</p>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>The Local Starter</h3>
+                    <p>Perfect for solo operators and new businesses needing an immediate, professional digital storefront.</p>
+                    <ul>
+                        <li>Lightning-Fast 1-Page Landing Page</li>
+                        <li>Mobile-First Responsive Design</li>
+                        <li>Direct Click-to-Call & Contact Form</li>
+                        <li>Basic Local SEO Setup</li>
+                    </ul>
+                    <a href="mailto:contact@cornerstonedigital.io?subject=Inquiry:%20Local%20Starter%20Package" style="color: var(--accent); font-weight: 600; text-decoration: none;">Get Started →</a>
+                </div>
+
+                <div class="card" style="border-color: var(--accent); position: relative;">
+                    <div style="position: absolute; top: -12px; right: 20px; background: var(--accent); color: white; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 20px;">MOST POPULAR</div>
+                    <h3>The Growth Presence</h3>
+                    <p>For established businesses ready to dominate local search and capture higher-value contracts.</p>
+                    <ul>
+                        <li>Multi-Page Website (Home, Services, About, Gallery)</li>
+                        <li>Advanced Local Google Maps Optimization</li>
+                        <li>Fast GitHub Hosting & SSL Security</li>
+                        <li>Priority Support & Maintenance</li>
+                    </ul>
+                    <a href="mailto:contact@cornerstonedigital.io?subject=Inquiry:%20Growth%20Presence%20Package" style="color: var(--accent); font-weight: 600; text-decoration: none;">Get Started →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <p>&copy; 2026 Cornerstone Digital. Proudly serving Wilmington and the First State.</p>
+    </footer>
+
+</body>
+</html>
