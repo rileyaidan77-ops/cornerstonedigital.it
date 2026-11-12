@@ -11,23 +11,37 @@
     <style>
         .click-effect { transition: transform 0.15s ease, background-color 0.2s ease; }
         .click-effect:active { transform: scale(0.97) translateY(2px); }
-        .apple-glass { background: rgba(51, 64, 47, 0.75); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .apple-pill-nav { 
+            background: rgba(51, 64, 47, 0.75); 
+            backdrop-filter: blur(16px); 
+            -webkit-backdrop-filter: blur(16px); 
+            border: 1px solid rgba(255, 255, 255, 0.15); 
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25); 
+            border-radius: 35px;
+            padding: 10px 28px;
+            display: inline-flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+        }
     </style>
 </head>
 <body style="margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #2E332D; background-color: #F4EFE6; line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; justify-content: space-between;">
 
-    <!-- APPLE LIQUID GLASS NAV -->
-    <nav class="apple-glass" style="padding: 16px 20px; text-align: center; position: sticky; top: 0; z-index: 100;">
-        <div style="max-width: 1000px; margin: 0 auto; display: flex; justify-content: center; gap: 25px; flex-wrap: wrap;">
-            <a href="index.html" class="click-effect" style="color: #F4EFE6; text-decoration: none; font-weight: bold; font-size: 0.95rem;">Welcome Hub</a>
-            <a href="hero.html" class="click-effect" style="color: #F4EFE6; text-decoration: none; font-weight: bold; font-size: 0.95rem;">Hero</a>
-            <span style="color: #8C9987; text-decoration: none; font-weight: bold; font-size: 0.95rem; cursor: default; opacity: 0.5;">About</span>
-            <a href="pricing.html" class="click-effect" style="color: #F4EFE6; text-decoration: none; font-weight: bold; font-size: 0.95rem;">Pricing</a>
-            <a href="contact.html" class="click-effect" style="color: #F4EFE6; text-decoration: none; font-weight: bold; font-size: 0.95rem;">Contact Us</a>
+    <!-- APPLE PILL NAVIGATION -->
+    <nav style="padding: 20px; text-align: center; position: sticky; top: 0; z-index: 100;">
+        <div id="apple-nav" class="apple-pill-nav">
+            <a href="index.html" class="click-effect" style="color: #F4EFE6; text-decoration: none; font-weight: bold; font-size: 0.9rem;">Welcome Hub</a>
+            <a href="hero.html" class="click-effect" style="color: #F4EFE6; text-decoration: none; font-weight: bold; font-size: 0.9rem;">Hero</a>
+            <span style="color: #8C9987; font-weight: bold; font-size: 0.9rem; cursor: default; opacity: 0.5;">About</span>
+            <a href="pricing.html" class="click-effect" style="color: #F4EFE6; text-decoration: none; font-weight: bold; font-size: 0.9rem;">Pricing</a>
+            <a href="contact.html" class="click-effect" style="color: #F4EFE6; text-decoration: none; font-weight: bold; font-size: 0.9rem;">Contact Us</a>
         </div>
     </nav>
 
-    <main style="padding: 80px 20px; max-width: 900px; margin: 0 auto; flex: 1;">
+    <main style="padding: 60px 20px; max-width: 900px; margin: 0 auto; flex: 1;">
         <div style="text-align: center; margin-bottom: 60px;">
             <h1 style="font-family: 'Fraunces', serif; font-size: 3rem; color: #33402F; margin-bottom: 15px;">About Cornerstone Digital</h1>
             <p style="font-size: 1.2rem; color: #4A5A48; max-width: 700px; margin: 0 auto;">Rooted in reliability, performance, and craftsmanship, we build digital foundations that help local businesses thrive.</p>
@@ -59,5 +73,19 @@
     <footer style="padding: 30px 20px; background-color: #2E332D; color: #6F7A6C; text-align: center;">
         <p style="font-size: 0.9rem; margin: 0;">&copy; 2026 Cornerstone Digital. All rights reserved.</p>
     </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            const nav = document.getElementById('apple-nav');
+            if (scrollY > 30) {
+                nav.style.transform = 'translateY(2px) scale(0.99)';
+                nav.style.boxShadow = '0 12px 40px rgba(0,0,0,0.4)';
+            } else {
+                nav.style.transform = 'translateY(0px) scale(1)';
+                nav.style.boxShadow = '0 8px 32px rgba(0,0,0,0.25)';
+            }
+        });
+    </script>
 </body>
 </html>
