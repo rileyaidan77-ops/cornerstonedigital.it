@@ -4,124 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>Cornerstone Digital | Web Development & Digital Agency</title>
+    <title>Cornerstone Digital | Welcome</title>
     
     <!-- Google Fonts: Fraunces -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #2E332D;
+            background-color: #33402F;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: space-between;
+        }
+        .click-effect {
+            transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.2s ease;
+        }
+        .click-effect:active {
+            transform: scale(0.97) translateY(2px);
+        }
+    </style>
 </head>
-<body style="margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #2E332D; background-color: #F4EFE6; line-height: 1.6;">
+<body style="padding: 40px 20px;">
 
-    <!-- HEADER / HERO SECTION -->
-    <header style="padding: 80px 20px; text-align: center; background-color: #33402F; color: #F4EFE6;">
-        <!-- LOGO -->
-        <div style="margin-bottom: 25px;">
-            <img src="cornerstone-horizontal.svg" alt="Cornerstone Digital Logo" style="max-width: 280px; width: 100%; height: auto; background-color: #F4EFE6; padding: 12px 24px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+    <!-- TOP NAVIGATION -->
+    <nav style="text-align: center; margin-bottom: 20px;">
+        <div style="display: inline-flex; gap: 20px; background-color: #2A3527; padding: 10px 24px; border-radius: 30px; border: 1px solid #4A5A48;">
+            <a href="index.html" class="click-effect" style="color: #F4EFE6; text-decoration: none; font-weight: bold; font-size: 0.9rem;">Home</a>
+            <a href="contact.html" class="click-effect" style="color: #B9C2B3; text-decoration: none; font-weight: bold; font-size: 0.9rem;">Contact</a>
         </div>
+    </nav>
 
-        <h1 style="font-family: 'Fraunces', serif; font-size: 3.2rem; margin-bottom: 10px; letter-spacing: -0.5px; color: #F4EFE6;">Cornerstone Digital</h1>
-        <p style="font-size: 1.25rem; color: #B9C2B3; max-width: 600px; margin: 0 auto 35px auto;">Professional web design and digital growth solutions for modern businesses in Wilmington, DE.</p>
-        <a href="#pricing" style="background-color: #C58B66; color: #ffffff; padding: 14px 32px; border-radius: 6px; text-decoration: none; font-weight: bold; display: inline-block; font-size: 1rem;">View Packages</a>
-    </header>
+    <!-- WELCOME HERO CONTAINER -->
+    <main style="max-width: 900px; margin: 0 auto; text-align: center; padding: 20px 0;">
+        <p style="color: #B9C2B3; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; font-weight: 600; margin-bottom: 10px;">Welcome to Cornerstone Digital</p>
+        <h1 style="font-family: 'Fraunces', serif; font-size: 3.5rem; color: #F4EFE6; margin-bottom: 15px; letter-spacing: -0.5px;">Crafting Digital Foundations.</h1>
+        <p style="color: #B9C2B3; font-size: 1.15rem; max-width: 600px; margin: 0 auto 50px auto;">Select an area below to explore our agency, view our core mission, or inspect transparent pricing packages.</p>
 
-    <!-- ABOUT SECTION -->
-    <section style="padding: 70px 20px; max-width: 800px; margin: 0 auto; text-align: center;">
-        <h2 style="font-family: 'Fraunces', serif; font-size: 2.3rem; margin-bottom: 20px; color: #33402F;">Built for Local Growth</h2>
-        <p style="font-size: 1.15rem; color: #4A5A48; line-height: 1.8;">We help businesses establish a powerful online presence with clean code, fast performance, and transparent pricing. No bloat, no hidden fees—just high-performing websites designed to convert.</p>
-    </section>
-
-    <!-- PRICING SECTION -->
-    <section id="pricing" style="padding: 80px 20px; background-color: #E8E0D0; text-align: center;">
-        <h2 style="font-family: 'Fraunces', serif; font-size: 2.6rem; margin-bottom: 10px; color: #33402F;">Simple, Transparent Pricing</h2>
-        <p style="font-size: 1.1rem; color: #6F7A6C; margin-bottom: 50px;">Choose the growth package that fits your business needs.</p>
-
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; max-width: 1200px; margin: 0 auto;">
+        <!-- 3 INTERACTIVE SELECTION CARDS -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; text-align: left; max-width: 900px; margin: 0 auto;">
             
-            <!-- Package 1: Starter -->
-            <div style="background-color: #F4EFE6; border: 1px solid #B9C2B3; border-radius: 10px; padding: 35px 30px; width: 300px; box-shadow: 0 4px 12px rgba(46,51,45,0.06); text-align: left; display: flex; flex-direction: column; justify-content: space-between;">
+            <!-- Card 1: Hero -->
+            <a href="hero.html" class="click-effect" style="background-color: #F4EFE6; padding: 35px 30px; border-radius: 12px; text-decoration: none; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">
                 <div>
-                    <h3 style="font-family: 'Fraunces', serif; font-size: 1.6rem; margin-bottom: 15px; color: #33402F;">Starter Package</h3>
-                    <p style="font-size: 2.2rem; font-weight: bold; color: #2E332D; margin-bottom: 5px;">$800 <span style="font-size: 1rem; font-weight: normal; color: #6F7A6C;">setup</span></p>
-                    <p style="font-size: 1.1rem; color: #A9714F; font-weight: 600; margin-bottom: 25px;">+ $300 / month hosting</p>
-                    <ul style="list-style-type: disc; padding-left: 20px; color: #2E332D; line-height: 1.7; margin-bottom: 30px;">
-                        <li>Basic professional website</li>
-                        <li>Domain purchase included</li>
-                        <li>Secure site hosting</li>
-                    </ul>
+                    <span style="font-size: 0.8rem; font-weight: bold; color: #C58B66; letter-spacing: 1px; text-transform: uppercase;">01 / Overview</span>
+                    <h2 style="font-family: 'Fraunces', serif; font-size: 1.8rem; color: #33402F; margin: 12px 0 10px 0;">The Hero Landing</h2>
+                    <p style="color: #4A5A48; font-size: 0.95rem; margin-bottom: 25px; line-height: 1.6;">Explore our agency identity, core value proposition, and quick access to get started.</p>
                 </div>
-                <a href="#contact" style="background-color: #33402F; color: #F4EFE6; padding: 12px; text-align: center; border-radius: 6px; text-decoration: none; font-weight: bold;">Get Started</a>
-            </div>
+                <span style="color: #33402F; font-weight: bold; font-size: 0.95rem;">Enter Section &rarr;</span>
+            </a>
 
-            <!-- Package 2: Growth (Highlighted) -->
-            <div style="background-color: #FFFFFF; border: 2px solid #C58B66; border-radius: 10px; padding: 35px 30px; width: 300px; box-shadow: 0 6px 20px rgba(197,139,102,0.2); text-align: left; display: flex; flex-direction: column; justify-content: space-between; position: relative;">
-                <div style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background-color: #C58B66; color: #ffffff; padding: 4px 14px; font-size: 0.8rem; font-weight: bold; border-radius: 12px; letter-spacing: 0.5px;">MOST POPULAR</div>
+            <!-- Card 2: About -->
+            <a href="about.html" class="click-effect" style="background-color: #F4EFE6; padding: 35px 30px; border-radius: 12px; text-decoration: none; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">
                 <div>
-                    <h3 style="font-family: 'Fraunces', serif; font-size: 1.6rem; margin-bottom: 15px; color: #33402F;">Growth Package</h3>
-                    <p style="font-size: 2.2rem; font-weight: bold; color: #2E332D; margin-bottom: 5px;">$1,000 <span style="font-size: 1.0rem; font-weight: normal; color: #6F7A6C;">setup</span></p>
-                    <p style="font-size: 1.1rem; color: #A9714F; font-weight: 600; margin-bottom: 25px;">+ $500 / month hosting</p>
-                    <ul style="list-style-type: disc; padding-left: 20px; color: #2E332D; line-height: 1.7; margin-bottom: 30px;">
-                        <li>Basic professional website</li>
-                        <li>Domain purchase included</li>
-                        <li>Secure site hosting</li>
-                        <li><strong>Two SEO optimized blog posts</strong></li>
-                    </ul>
+                    <span style="font-size: 0.8rem; font-weight: bold; color: #C58B66; letter-spacing: 1px; text-transform: uppercase;">02 / Philosophy</span>
+                    <h2 style="font-family: 'Fraunces', serif; font-size: 1.8rem; color: #33402F; margin: 12px 0 10px 0;">About & Vision</h2>
+                    <p style="color: #4A5A48; font-size: 0.95rem; margin-bottom: 25px; line-height: 1.6;">Discover our mission statement, our core drivers, and what high-performing web solutions we offer.</p>
                 </div>
-                <a href="#contact" style="background-color: #C58B66; color: #ffffff; padding: 12px; text-align: center; border-radius: 6px; text-decoration: none; font-weight: bold;">Get Started</a>
-            </div>
+                <span style="color: #33402F; font-weight: bold; font-size: 0.95rem;">Enter Section &rarr;</span>
+            </a>
 
-            <!-- Package 3: Scale -->
-            <div style="background-color: #F4EFE6; border: 1px solid #B9C2B3; border-radius: 10px; padding: 35px 30px; width: 300px; box-shadow: 0 4px 12px rgba(46,51,45,0.06); text-align: left; display: flex; flex-direction: column; justify-content: space-between;">
+            <!-- Card 3: Pricing -->
+            <a href="pricing.html" class="click-effect" style="background-color: #F4EFE6; padding: 35px 30px; border-radius: 12px; text-decoration: none; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">
                 <div>
-                    <h3 style="font-family: 'Fraunces', serif; font-size: 1.6rem; margin-bottom: 15px; color: #33402F;">Scale Package</h3>
-                    <p style="font-size: 2.2rem; font-weight: bold; color: #2E332D; margin-bottom: 5px;">$1,000 <span style="font-size: 1.0rem; font-weight: normal; color: #6F7A6C;">setup</span></p>
-                    <p style="font-size: 1.1rem; color: #A9714F; font-weight: 600; margin-bottom: 25px;">+ $800 / month hosting</p>
-                    <ul style="list-style-type: disc; padding-left: 20px; color: #2E332D; line-height: 1.7; margin-bottom: 30px;">
-                        <li>Basic professional website</li>
-                        <li>Domain purchase included</li>
-                        <li>Secure site hosting</li>
-                        <li><strong>One SEO optimized blog post per month</strong></li>
-                    </ul>
+                    <span style="font-size: 0.8rem; font-weight: bold; color: #C58B66; letter-spacing: 1px; text-transform: uppercase;">03 / Investment</span>
+                    <h2 style="font-family: 'Fraunces', serif; font-size: 1.8rem; color: #33402F; margin: 12px 0 10px 0;">Pricing Packages</h2>
+                    <p style="color: #4A5A48; font-size: 0.95rem; margin-bottom: 25px; line-height: 1.6;">Review our transparent tiered growth plans designed for local businesses in Wilmington, DE.</p>
                 </div>
-                <a href="#contact" style="background-color: #33402F; color: #F4EFE6; padding: 12px; text-align: center; border-radius: 6px; text-decoration: none; font-weight: bold;">Get Started</a>
-            </div>
+                <span style="color: #33402F; font-weight: bold; font-size: 0.95rem;">Enter Section &rarr;</span>
+            </a>
 
         </div>
-    </section>
+    </main>
 
-    <!-- CONTACT / FOOTER SECTION -->
-    <section id="contact" style="padding: 80px 20px; background-color: #2E332D; color: #B9C2B3; text-align: center;">
-        <div style="max-width: 600px; margin: 0 auto;">
-            <h2 style="font-family: 'Fraunces', serif; font-size: 2.3rem; color: #F4EFE6; margin-bottom: 10px;">Ready to Scale Your Business?</h2>
-            <p style="margin-bottom: 35px; color: #B9C2B3;">Fill out the form below to get in touch, and we'll respond within 24 hours.</p>
-            
-            <!-- Contact Form -->
-            <form action="https://formsubmit.co/aidanriley7878@gmail.com" method="POST" style="display: flex; flex-direction: column; gap: 18px; text-align: left;">
-                
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_subject" value="New Lead from Cornerstone Digital Website!">
-                
-                <div>
-                    <label for="name" style="display: block; font-size: 0.9rem; color: #F4EFE6; margin-bottom: 6px;">Your Name</label>
-                    <input type="text" id="name" name="name" required placeholder="John Doe" style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid #4A5A48; background-color: #33402F; color: #F4EFE6; box-sizing: border-box;">
-                </div>
-
-                <div>
-                    <label for="email" style="display: block; font-size: 0.9rem; color: #F4EFE6; margin-bottom: 6px;">Email Address</label>
-                    <input type="email" id="email" name="email" required placeholder="john@example.com" style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid #4A5A48; background-color: #33402F; color: #F4EFE6; box-sizing: border-box;">
-                </div>
-
-                <div>
-                    <label for="message" style="display: block; font-size: 0.9rem; color: #F4EFE6; margin-bottom: 6px;">Project Details / Message</label>
-                    <textarea id="message" name="message" rows="4" required placeholder="Tell us about your business and goals..." style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid #4A5A48; background-color: #33402F; color: #F4EFE6; box-sizing: border-box; resize: vertical;"></textarea>
-                </div>
-
-                <button type="submit" style="background-color: #C58B66; color: #ffffff; padding: 14px; border: none; border-radius: 6px; font-weight: bold; font-size: 1rem; cursor: pointer;">Send Message</button>
-            </form>
-
-            <p style="font-size: 0.9rem; color: #6F7A6C; margin-top: 50px;">&copy; 2026 Cornerstone Digital. All rights reserved.</p>
-        </div>
-    </section>
+    <!-- FOOTER -->
+    <footer style="text-align: center; padding: 20px; color: #6F7A6C; font-size: 0.85rem;">
+        &copy; 2026 Cornerstone Digital. All rights reserved.
+    </footer>
 
 </body>
 </html>
