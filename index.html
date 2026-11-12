@@ -10,11 +10,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
     <style>
         body {
+            opacity: 0;
+            animation: fadeInPage 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
             margin: 0;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            color: #2E332D;
-            background: radial-gradient(circle at 20% 20%, #3C4D38 0%, #33402F 50%, #263123 100%);
-            background-attachment: fixed;
             line-height: 1.6;
             display: flex;
             flex-direction: column;
@@ -22,43 +21,50 @@
             justify-content: space-between;
             position: relative;
             overflow-x: hidden;
+            transition: background 0.3s ease, color 0.3s ease;
         }
-        .bg-shape-1 { position: absolute; top: -100px; left: -100px; width: 400px; height: 400px; background: rgba(169, 113, 79, 0.08); border-radius: 50%; pointer-events: none; filter: blur(60px); z-index: 0; }
-        .bg-shape-2 { position: absolute; bottom: -150px; right: -150px; width: 500px; height: 500px; background: rgba(185, 194, 179, 0.05); border-radius: 50%; pointer-events: none; filter: blur(80px); z-index: 0; }
-        .bg-grid { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; z-index: 0; }
-        nav, main, footer { position: relative; z-index: 1; }
-        
-        .click-effect { transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.2s ease, border-color 0.2s ease; }
-        .click-effect:active { transform: scale(0.97) translateY(2px); }
-        
-        .apple-pill-nav { 
-            background: rgba(42, 53, 39, 0.75); 
-            backdrop-filter: blur(16px); 
-            -webkit-backdrop-filter: blur(16px); 
-            border: 1px solid rgba(255, 255, 255, 0.15); 
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25); 
-            border-radius: 35px;
-            padding: 10px 28px;
-            display: inline-flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+        @keyframes fadeInPage { to { opacity: 1; } }
+
+        /* LIGHT SYSTEM THEME */
+        :root {
+            --bg-gradient: radial-gradient(circle at 20% 20%, #EAE2D5 0%, #DFD5C6 50%, #D4C8B5 100%);
+            --text-main: #2E332D;
+            --text-muted: #4A5A48;
+            --nav-bg: rgba(223, 213, 198, 0.85);
+            --nav-border: rgba(74, 90, 72, 0.2);
+            --nav-text: #33402F;
+            --card-bg: rgba(255, 255, 255, 0.96);
+            --card-border: rgba(185, 194, 179, 0.4);
+            --accent-color: #C58B66;
+            --footer-text: #6F7A6C;
         }
 
-        .apple-scroll-card {
-            background-color: rgba(244, 239, 230, 0.96);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(185, 194, 179, 0.3);
-            will-change: transform, box-shadow;
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.2s ease;
+        /* AUTO DARK MODE THEME */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-gradient: radial-gradient(circle at 20% 20%, #3C4D38 0%, #33402F 50%, #263123 100%);
+                --text-main: #F4EFE6;
+                --text-muted: #B9C2B3;
+                --nav-bg: rgba(42, 53, 39, 0.75);
+                --nav-border: rgba(255, 255, 255, 0.15);
+                --nav-text: #F4EFE6;
+                --card-bg: rgba(244, 239, 230, 0.96);
+                --card-border: rgba(185, 194, 179, 0.3);
+                --accent-color: #C58B66;
+                --footer-text: #8C9987;
+            }
         }
-        .apple-scroll-card:hover {
-            transform: translateY(-6px) scale(1.01);
-            border-color: #C58B66;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3) !important;
-        }
+
+        body { background: var(--bg-gradient); background-attachment: fixed; color: var(--text-main); }
+        .bg-shape-1 { position: absolute; top: -100px; left: -100px; width: 400px; height: 400px; background: rgba(169, 113, 79, 0.08); border-radius: 50%; pointer-events: none; filter: blur(60px); z-index: 0; }
+        .bg-shape-2 { position: absolute; bottom: -150px; right: -150px; width: 500px; height: 500px; background: rgba(185, 194, 179, 0.05); border-radius: 50%; pointer-events: none; filter: blur(80px); z-index: 0; }
+        .bg-grid { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(100, 100, 100, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 100, 100, 0.03) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; z-index: 0; }
+        nav, main, footer { position: relative; z-index: 1; }
+        .click-effect { transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.2s ease, border-color 0.2s ease; }
+        .click-effect:active { transform: scale(0.97) translateY(2px); }
+        .apple-pill-nav { background: var(--nav-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid var(--nav-border); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25); border-radius: 35px; padding: 10px 28px; display: inline-flex; gap: 20px; flex-wrap: wrap; justify-content: center; align-items: center; transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease; }
+        .apple-scroll-card { background-color: var(--card-bg); backdrop-filter: blur(10px); border: 1px solid var(--card-border); will-change: transform, box-shadow; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.2s ease; }
+        .apple-scroll-card:hover { transform: translateY(-6px) scale(1.01); border-color: var(--accent-color); box-shadow: 0 20px 40px rgba(0,0,0,0.3) !important; }
     </style>
 </head>
 <body style="padding: 40px 20px;">
@@ -66,31 +72,30 @@
     <div class="bg-shape-2"></div>
     <div class="bg-grid"></div>
 
-    <!-- APPLE PILL NAVIGATION -->
     <nav style="text-align: center; margin-bottom: 30px; position: sticky; top: 20px; z-index: 100;">
         <div id="apple-nav" class="apple-pill-nav">
-            <span style="color: #8C9987; font-weight: bold; font-size: 0.9rem; cursor: default; opacity: 0.5;">Welcome</span>
-            <a href="hero.html" class="click-effect" style="color: #F4EFE6; text-decoration: none; font-weight: bold; font-size: 0.9rem;">Hero</a>
-            <a href="about.html" class="click-effect" style="color: #F4EFE6; text-decoration: none; font-weight: bold; font-size: 0.9rem;">About</a>
-            <a href="pricing.html" class="click-effect" style="color: #F4EFE6; text-decoration: none; font-weight: bold; font-size: 0.9rem;">Pricing</a>
-            <a href="contact.html" class="click-effect" style="color: #F4EFE6; text-decoration: none; font-weight: bold; font-size: 0.9rem;">Contact</a>
+            <span style="color: var(--text-muted); font-weight: bold; font-size: 0.9rem; cursor: default; opacity: 0.5;">Welcome</span>
+            <a href="hero.html" class="click-effect" style="color: var(--nav-text); text-decoration: none; font-weight: bold; font-size: 0.9rem;">Hero</a>
+            <a href="about.html" class="click-effect" style="color: var(--nav-text); text-decoration: none; font-weight: bold; font-size: 0.9rem;">About</a>
+            <a href="pricing.html" class="click-effect" style="color: var(--nav-text); text-decoration: none; font-weight: bold; font-size: 0.9rem;">Pricing</a>
+            <a href="contact.html" class="click-effect" style="color: var(--nav-text); text-decoration: none; font-weight: bold; font-size: 0.9rem;">Contact</a>
         </div>
     </nav>
 
     <main style="max-width: 900px; margin: 0 auto; text-align: center; padding: 20px 0;">
         <div style="margin-bottom: 30px; display: flex; justify-content: center;">
-            <div style="background-color: rgba(244, 239, 230, 0.95); padding: 18px 26px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.2); border: 1px solid rgba(185, 194, 179, 0.4);">
+            <div style="background-color: var(--card-bg); padding: 18px 26px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.2); border: 1px solid var(--card-border);">
                 <img src="cornerstone-stacked-dark.svg" alt="Cornerstone Digital Stacked Logo" style="max-width: 140px; width: 100%; height: auto; display: block;">
             </div>
         </div>
-        <p style="color: #B9C2B3; text-transform: uppercase; letter-spacing: 2.5px; font-size: 0.85rem; font-weight: 600; margin-bottom: 12px;">Welcome to Cornerstone Digital</p>
-        <h1 style="font-family: 'Fraunces', serif; font-size: 3.5rem; color: #F4EFE6; margin-bottom: 15px; letter-spacing: -0.5px; text-shadow: 0 2px 10px rgba(0,0,0,0.2);">Crafting Digital Foundations.</h1>
-        <p style="color: #B9C2B3; font-size: 1.15rem; max-width: 600px; margin: 0 auto 50px auto;">Select an area below to explore our agency identity, review our core mission, or inspect transparent growth packages.</p>
+        <p style="color: var(--text-muted); text-transform: uppercase; letter-spacing: 2.5px; font-size: 0.85rem; font-weight: 600; margin-bottom: 12px;">Welcome to Cornerstone Digital</p>
+        <h1 style="font-family: 'Fraunces', serif; font-size: 3.5rem; color: var(--text-main); margin-bottom: 15px; letter-spacing: -0.5px; text-shadow: 0 2px 10px rgba(0,0,0,0.2);">Crafting Digital Foundations.</h1>
+        <p style="color: var(--text-muted); font-size: 1.15rem; max-width: 600px; margin: 0 auto 50px auto;">Select an area below to explore our agency identity, review our core mission, or inspect transparent growth packages.</p>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; text-align: left; max-width: 900px; margin: 0 auto;">
             <a href="hero.html" class="click-effect apple-scroll-card" style="padding: 35px 30px; border-radius: 12px; text-decoration: none; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">
                 <div>
-                    <span style="font-size: 0.8rem; font-weight: bold; color: #C58B66; letter-spacing: 1px; text-transform: uppercase;">01 / Overview</span>
+                    <span style="font-size: 0.8rem; font-weight: bold; color: var(--accent-color); letter-spacing: 1px; text-transform: uppercase;">01 / Overview</span>
                     <h2 style="font-family: 'Fraunces', serif; font-size: 1.8rem; color: #33402F; margin: 12px 0 10px 0;">The Hero Landing</h2>
                     <p style="color: #4A5A48; font-size: 0.95rem; margin-bottom: 25px; line-height: 1.6;">Explore our agency identity, core value proposition, and quick access to get started.</p>
                 </div>
@@ -98,7 +103,7 @@
             </a>
             <a href="about.html" class="click-effect apple-scroll-card" style="padding: 35px 30px; border-radius: 12px; text-decoration: none; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">
                 <div>
-                    <span style="font-size: 0.8rem; font-weight: bold; color: #C58B66; letter-spacing: 1px; text-transform: uppercase;">02 / Philosophy</span>
+                    <span style="font-size: 0.8rem; font-weight: bold; color: var(--accent-color); letter-spacing: 1px; text-transform: uppercase;">02 / Philosophy</span>
                     <h2 style="font-family: 'Fraunces', serif; font-size: 1.8rem; color: #33402F; margin: 12px 0 10px 0;">About & Vision</h2>
                     <p style="color: #4A5A48; font-size: 0.95rem; margin-bottom: 25px; line-height: 1.6;">Discover our mission statement, our core drivers, and what high-performing web solutions we offer.</p>
                 </div>
@@ -106,7 +111,7 @@
             </a>
             <a href="pricing.html" class="click-effect apple-scroll-card" style="padding: 35px 30px; border-radius: 12px; text-decoration: none; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">
                 <div>
-                    <span style="font-size: 0.8rem; font-weight: bold; color: #C58B66; letter-spacing: 1px; text-transform: uppercase;">03 / Investment</span>
+                    <span style="font-size: 0.8rem; font-weight: bold; color: var(--accent-color); letter-spacing: 1px; text-transform: uppercase;">03 / Investment</span>
                     <h2 style="font-family: 'Fraunces', serif; font-size: 1.8rem; color: #33402F; margin: 12px 0 10px 0;">Pricing Packages</h2>
                     <p style="color: #4A5A48; font-size: 0.95rem; margin-bottom: 25px; line-height: 1.6;">Review our transparent tiered growth plans designed for local businesses in Wilmington, DE.</p>
                 </div>
@@ -115,7 +120,7 @@
         </div>
     </main>
 
-    <footer style="text-align: center; padding: 20px; color: #8C9987; font-size: 0.85rem;">
+    <footer style="text-align: center; padding: 20px; color: var(--footer-text); font-size: 0.85rem;">
         &copy; 2026 Cornerstone Digital. All rights reserved.
     </footer>
 
