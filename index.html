@@ -3,137 +3,503 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow">
-    <title>Cornerstone Digital | Welcome</title>
+    <title>Cornerstone Digital | High-Performance Web Design in Wilmington, DE</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&display=swap" rel="stylesheet">
     <style>
-        body {
-            opacity: 0;
-            animation: fadeInPage 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            margin: 0;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            justify-content: space-between;
-            position: relative;
-            overflow-x: hidden;
-            transition: background 0.3s ease, color 0.3s ease;
-        }
-        @keyframes fadeInPage { to { opacity: 1; } }
-
-        /* LIGHT SYSTEM THEME */
         :root {
-            --bg-gradient: radial-gradient(circle at 20% 20%, #EAE2D5 0%, #DFD5C6 50%, #D4C8B5 100%);
-            --text-main: #2E332D;
-            --text-muted: #4A5A48;
-            --nav-bg: rgba(223, 213, 198, 0.85);
-            --nav-border: rgba(74, 90, 72, 0.2);
-            --nav-text: #33402F;
-            --card-bg: rgba(255, 255, 255, 0.96);
-            --card-border: rgba(185, 194, 179, 0.4);
-            --accent-color: #C58B66;
-            --footer-text: #6F7A6C;
+            --bg-color: #F4EFE6;
+            --text-color: #263123;
+            --muted-text: #6F7A6C;
+            --card-bg: #E8E0D0;
+            --card-border: rgba(51, 64, 47, 0.12);
+            --accent: #C58B66;
+            --nav-bg: rgba(244, 239, 230, 0.85);
+            --nav-border: rgba(51, 64, 47, 0.15);
+            --glow: rgba(197, 139, 102, 0.15);
         }
 
-        /* AUTO DARK MODE THEME */
         @media (prefers-color-scheme: dark) {
             :root {
-                --bg-gradient: radial-gradient(circle at 20% 20%, #3C4D38 0%, #33402F 50%, #263123 100%);
-                --text-main: #F4EFE6;
-                --text-muted: #B9C2B3;
-                --nav-bg: rgba(42, 53, 39, 0.75);
-                --nav-border: rgba(255, 255, 255, 0.15);
-                --nav-text: #F4EFE6;
-                --card-bg: rgba(244, 239, 230, 0.96);
-                --card-border: rgba(185, 194, 179, 0.3);
-                --accent-color: #C58B66;
-                --footer-text: #8C9987;
+                --bg-color: #263123;
+                --text-color: #F4EFE6;
+                --muted-text: #B9C2B3;
+                --card-bg: #33402F;
+                --card-border: rgba(244, 239, 230, 0.12);
+                --accent: #C58B66;
+                --nav-bg: rgba(38, 49, 35, 0.85);
+                --nav-border: rgba(244, 239, 230, 0.15);
+                --glow: rgba(197, 139, 102, 0.1);
             }
         }
 
-        body { background: var(--bg-gradient); background-attachment: fixed; color: var(--text-main); }
-        .bg-shape-1 { position: absolute; top: -100px; left: -100px; width: 400px; height: 400px; background: rgba(169, 113, 79, 0.08); border-radius: 50%; pointer-events: none; filter: blur(60px); z-index: 0; }
-        .bg-shape-2 { position: absolute; bottom: -150px; right: -150px; width: 500px; height: 500px; background: rgba(185, 194, 179, 0.05); border-radius: 50%; pointer-events: none; filter: blur(80px); z-index: 0; }
-        .bg-grid { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(100, 100, 100, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 100, 100, 0.03) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; z-index: 0; }
-        nav, main, footer { position: relative; z-index: 1; }
-        .click-effect { transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.2s ease, border-color 0.2s ease; }
-        .click-effect:active { transform: scale(0.97) translateY(2px); }
-        .apple-pill-nav { background: var(--nav-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid var(--nav-border); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25); border-radius: 35px; padding: 10px 28px; display: inline-flex; gap: 20px; flex-wrap: wrap; justify-content: center; align-items: center; transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease; }
-        .apple-scroll-card { background-color: var(--card-bg); backdrop-filter: blur(10px); border: 1px solid var(--card-border); will-change: transform, box-shadow; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.2s ease; }
-        .apple-scroll-card:hover { transform: translateY(-6px) scale(1.01); border-color: var(--accent-color); box-shadow: 0 20px 40px rgba(0,0,0,0.3) !important; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            animation: fadeInPage 0.5s ease-in-out;
+            overflow-x: hidden;
+        }
+
+        @keyframes fadeInPage {
+            from { opacity: 0; transform: translateY(4px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Atmospheric Background Glows */
+        .atmospheric-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: var(--glow);
+            filter: blur(120px);
+            border-radius: 50%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Apple Pill Navigation */
+        nav {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--nav-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--nav-border);
+            padding: 10px 24px;
+            border-radius: 9999px;
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            z-index: 1000;
+            transition: box-shadow 0.3s ease;
+        }
+
+        nav.scrolled {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            opacity: 0.8;
+            transition: opacity 0.2s ease;
+        }
+
+        nav a:hover, nav a.active {
+            opacity: 1;
+            color: var(--accent);
+        }
+
+        .nav-logo {
+            font-family: 'Fraunces', serif;
+            font-weight: 600;
+            font-size: 1rem;
+            opacity: 1 !important;
+        }
+
+        /* Layout & Sections */
+        section {
+            padding: 100px 20px 80px;
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Fraunces', serif;
+            font-weight: 500;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-top: 140px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.8rem, 5vw, 4.5rem);
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            color: var(--muted-text);
+            max-width: 650px;
+            margin-bottom: 40px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            background-color: var(--text-color);
+            color: var(--bg-color);
+            padding: 14px 28px;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-color);
+            border: 1px solid var(--card-border);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--card-bg);
+        }
+
+        /* Overview / Narrative Q&A Section */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 36px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 14px;
+        }
+
+        .card p {
+            color: var(--muted-text);
+            font-size: 0.95rem;
+        }
+
+        /* Services & Vision Section */
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2.2rem, 4vw, 3rem);
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            color: var(--muted-text);
+            font-size: 1.1rem;
+        }
+
+        /* Pricing Grid */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .pricing-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--accent);
+        }
+
+        .pricing-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+
+        .price {
+            font-family: 'Fraunces', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin: 20px 0;
+            color: var(--accent);
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 30px;
+            flex-grow: 1;
+        }
+
+        .features-list li {
+            padding: 8px 0;
+            color: var(--muted-text);
+            font-size: 0.95rem;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        /* Contact Section */
+        .contact-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 50px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border-radius: 12px;
+            border: 1px solid var(--card-border);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--muted-text);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--card-border);
+            margin-top: 80px;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 8px 16px;
+                gap: 16px;
+            }
+            nav a:not(.nav-logo):not(:last-child) {
+                display: none;
+            }
+            .contact-container {
+                padding: 30px 20px;
+            }
+        }
     </style>
 </head>
-<body style="padding: 40px 20px;">
-    <div class="bg-shape-1"></div>
-    <div class="bg-shape-2"></div>
-    <div class="bg-grid"></div>
+<body>
 
-    <nav style="text-align: center; margin-bottom: 30px; position: sticky; top: 20px; z-index: 100;">
-        <div id="apple-nav" class="apple-pill-nav">
-            <span style="color: var(--text-muted); font-weight: bold; font-size: 0.9rem; cursor: default; opacity: 0.5;">Welcome</span>
-            <a href="hero.html" class="click-effect" style="color: var(--nav-text); text-decoration: none; font-weight: bold; font-size: 0.9rem;">Hero</a>
-            <a href="about.html" class="click-effect" style="color: var(--nav-text); text-decoration: none; font-weight: bold; font-size: 0.9rem;">About</a>
-            <a href="pricing.html" class="click-effect" style="color: var(--nav-text); text-decoration: none; font-weight: bold; font-size: 0.9rem;">Pricing</a>
-            <a href="contact.html" class="click-effect" style="color: var(--nav-text); text-decoration: none; font-weight: bold; font-size: 0.9rem;">Contact</a>
-        </div>
+    <div class="atmospheric-glow" style="top: 50px; left: 10%; opacity: 0.6;"></div>
+    <div class="atmospheric-glow" style="top: 1200px; right: 10%; opacity: 0.5;"></div>
+
+    <!-- Apple Pill Navigation -->
+    <nav id="navbar">
+        <a href="#hero" class="nav-logo">Cornerstone Digital</a>
+        <a href="#overview">Overview</a>
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact" class="btn" style="padding: 6px 16px; font-size: 0.85rem;">Get in Touch</a>
     </nav>
 
-    <main style="max-width: 900px; margin: 0 auto; text-align: center; padding: 20px 0;">
-        <div style="margin-bottom: 30px; display: flex; justify-content: center;">
-            <div style="background-color: var(--card-bg); padding: 18px 26px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.2); border: 1px solid var(--card-border);">
-                <img src="cornerstone-stacked-dark.svg" alt="Cornerstone Digital Stacked Logo" style="max-width: 140px; width: 100%; height: auto; display: block;">
+    <!-- 1. Hero Section -->
+    <section id="hero" class="hero">
+        <h1>High-Performance Web Design for Wilmington Businesses</h1>
+        <p>We craft Apple-inspired, narrative-driven digital platforms that elevate local brands, convert visitors effortlessly, and drive sustainable growth.</p>
+        <div class="cta-buttons">
+            <a href="#pricing" class="btn">Explore Investment Tiers</a>
+            <a href="#contact" class="btn btn-outline">Start a Project</a>
+        </div>
+    </section>
+
+    <!-- 2. Overview / Q&A Section -->
+    <section id="overview">
+        <div class="section-header">
+            <h2>Clarity. Purpose. Craft.</h2>
+            <p>Designed specifically for local business leaders who value precision and design integrity.</p>
+        </div>
+        <div class="overview-grid">
+            <div class="card">
+                <h3>Why Wilmington Businesses?</h3>
+                <p>Local businesses deserve world-class digital experiences that rival top-tier tech brands, helping you stand out in Delaware's growing market[cite: 1].</p>
+            </div>
+            <div class="card">
+                <h3>System-Aware Engineering</h3>
+                <p>Your website automatically adapts to your client's preferred system theme, featuring refined earth tones and butter-smooth performance[cite: 1].</p>
+            </div>
+            <div class="card">
+                <h3>Conversion-First Architecture</h3>
+                <p>Every layout decision, typography choice, and interaction physics element is built to guide users naturally toward a project inquiry[cite: 1].</p>
             </div>
         </div>
-        <p style="color: var(--text-muted); text-transform: uppercase; letter-spacing: 2.5px; font-size: 0.85rem; font-weight: 600; margin-bottom: 12px;">Welcome to Cornerstone Digital</p>
-        <h1 style="font-family: 'Fraunces', serif; font-size: 3.5rem; color: var(--text-main); margin-bottom: 15px; letter-spacing: -0.5px; text-shadow: 0 2px 10px rgba(0,0,0,0.2);">Crafting Digital Foundations.</h1>
-        <p style="color: var(--text-muted); font-size: 1.15rem; max-width: 600px; margin: 0 auto 50px auto;">Select an area below to explore our agency identity, review our core mission, or inspect transparent growth packages.</p>
+    </section>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; text-align: left; max-width: 900px; margin: 0 auto;">
-            <a href="hero.html" class="click-effect apple-scroll-card" style="padding: 35px 30px; border-radius: 12px; text-decoration: none; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">
-                <div>
-                    <span style="font-size: 0.8rem; font-weight: bold; color: var(--accent-color); letter-spacing: 1px; text-transform: uppercase;">01 / Overview</span>
-                    <h2 style="font-family: 'Fraunces', serif; font-size: 1.8rem; color: #33402F; margin: 12px 0 10px 0;">The Hero Landing</h2>
-                    <p style="color: #4A5A48; font-size: 0.95rem; margin-bottom: 25px; line-height: 1.6;">Explore our agency identity, core value proposition, and quick access to get started.</p>
-                </div>
-                <span style="color: #33402F; font-weight: bold; font-size: 0.95rem;">Enter Section &rarr;</span>
-            </a>
-            <a href="about.html" class="click-effect apple-scroll-card" style="padding: 35px 30px; border-radius: 12px; text-decoration: none; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">
-                <div>
-                    <span style="font-size: 0.8rem; font-weight: bold; color: var(--accent-color); letter-spacing: 1px; text-transform: uppercase;">02 / Philosophy</span>
-                    <h2 style="font-family: 'Fraunces', serif; font-size: 1.8rem; color: #33402F; margin: 12px 0 10px 0;">About & Vision</h2>
-                    <p style="color: #4A5A48; font-size: 0.95rem; margin-bottom: 25px; line-height: 1.6;">Discover our mission statement, our core drivers, and what high-performing web solutions we offer.</p>
-                </div>
-                <span style="color: #33402F; font-weight: bold; font-size: 0.95rem;">Enter Section &rarr;</span>
-            </a>
-            <a href="pricing.html" class="click-effect apple-scroll-card" style="padding: 35px 30px; border-radius: 12px; text-decoration: none; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">
-                <div>
-                    <span style="font-size: 0.8rem; font-weight: bold; color: var(--accent-color); letter-spacing: 1px; text-transform: uppercase;">03 / Investment</span>
-                    <h2 style="font-family: 'Fraunces', serif; font-size: 1.8rem; color: #33402F; margin: 12px 0 10px 0;">Pricing Packages</h2>
-                    <p style="color: #4A5A48; font-size: 0.95rem; margin-bottom: 25px; line-height: 1.6;">Review our transparent tiered growth plans designed for local businesses in Wilmington, DE.</p>
-                </div>
-                <span style="color: #33402F; font-weight: bold; font-size: 0.95rem;">Enter Section &rarr;</span>
-            </a>
+    <!-- 3. Services & Vision Section -->
+    <section id="services">
+        <div class="section-header">
+            <h2>Our Agency Philosophy</h2>
+            <p>Rooted in editorial elegance and robust technical performance.</p>
         </div>
-    </main>
+        <div class="overview-grid">
+            <div class="card">
+                <h3>Editorial Typography</h3>
+                <p>Using Fraunces serif headings paired with clean system sans-serif body copy to project instant high-end authority[cite: 1].</p>
+            </div>
+            <div class="card">
+                <h3>Static Reliability</h3>
+                <p>Lightning-fast static HTML/CSS architecture hosted seamlessly on GitHub Pages for ultimate security and zero downtime[cite: 1].</p>
+            </div>
+        </div>
+    </section>
 
-    <footer style="text-align: center; padding: 20px; color: var(--footer-text); font-size: 0.85rem;">
-        &copy; 2026 Cornerstone Digital. All rights reserved.
+    <!-- 4. Transparent Pricing Tiers -->
+    <section id="pricing">
+        <div class="section-header">
+            <h2>Transparent Investment Tiers</h2>
+            <p>Clear, straightforward packages designed to scale with your business goals.</p>
+        </div>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Starter</h3>
+                <p>Essential digital presence for emerging local businesses.</p>
+                <div class="price">$1,500</div>
+                <ul class="features-list">
+                    <li>Single-Page Custom Design</li>
+                    <li>System-Aware Dark/Light Mode</li>
+                    <li>Mobile Responsive Layout</li>
+                    <li>Formspree Lead Form Integration</li>
+                </ul>
+                <a href="#contact" class="btn btn-outline" style="text-align: center;">Select Starter</a>
+            </div>
+
+            <div class="pricing-card featured">
+                <h3>Growth</h3>
+                <p>Multi-page immersive experience for growing brands.</p>
+                <div class="price">$3,200</div>
+                <ul class="features-list">
+                    <li>Up to 5 Custom Pages</li>
+                    <li>Advanced Narrative Layouts</li>
+                    <li>Smooth Interaction Physics</li>
+                    <li>On-Page SEO Optimization</li>
+                    <li>Priority Turnaround</li>
+                </ul>
+                <a href="#contact" class="btn" style="text-align: center;">Select Growth</a>
+            </div>
+
+            <div class="pricing-card">
+                <h3>Scale</h3>
+                <p>Comprehensive digital overhaul for established enterprises.</p>
+                <div class="price">$5,500+</div>
+                <ul class="features-list">
+                    <li>Full Multi-Page Architecture</li>
+                    <li>Custom Interactive Elements</li>
+                    <li>Comprehensive Content Strategy</li>
+                    <li>Dedicated Maintenance Support</li>
+                </ul>
+                <a href="#contact" class="btn btn-outline" style="text-align: center;">Select Scale</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Contact Section (Formspree) -->
+    <section id="contact">
+        <div class="section-header">
+            <h2>Let's Build Together</h2>
+            <p>Ready to elevate your digital presence? Send us a message below.</p>
+        </div>
+        <div class="contact-container">
+            <form action="https://formspree.io/f/xppdzjyp" method="POST">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Jane Doe">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="_replyto" required placeholder="jane@business.com">
+                </div>
+                <div class="form-group">
+                    <label for="package">Interested Package</label>
+                    <input type="text" id="package" name="package" placeholder="Starter / Growth / Scale">
+                </div>
+                <div class="form-group">
+                    <label for="message">Project Details</label>
+                    <textarea id="message" name="message" required placeholder="Tell us about your business and goals..."></textarea>
+                </div>
+                <button type="submit" class="btn" style="width: 100%; cursor: pointer; border: none;">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Cornerstone Digital. Crafted for Wilmington, Delaware businesses.</p>
     </footer>
 
     <script>
+        // Navigation shadow scroll effect
         window.addEventListener('scroll', () => {
-            const scrollY = window.scrollY;
-            const nav = document.getElementById('apple-nav');
-            if (scrollY > 30) {
-                nav.style.transform = 'translateY(2px) scale(0.99)';
-                nav.style.boxShadow = '0 12px 40px rgba(0,0,0,0.4)';
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 30) {
+                nav.classList.add('scrolled');
             } else {
-                nav.style.transform = 'translateY(0px) scale(1)';
-                nav.style.boxShadow = '0 8px 32px rgba(0,0,0,0.25)';
+                nav.classList.remove('scrolled');
             }
         });
     </script>
