@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cornerstone Digital | High-Performance Web Design in Wilmington, DE</title>
+    <title>Cornerstone Digital | High-Performance Web Design for the DE, PA & MD Tristate Region</title>
+    
+    <!-- Favicon using your uploaded icon file -->
+    <link rel="icon" type="image/svg+xml" href="cornerstone-icon.svg">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&display=swap" rel="stylesheet">
@@ -13,11 +17,15 @@
             --text-color: #263123;
             --muted-text: #6F7A6C;
             --card-bg: #E8E0D0;
-            --card-border: rgba(51, 64, 47, 0.12);
+            --card-border: rgba(51, 64, 47, 0.14);
             --accent: #C58B66;
+            --accent-soft: rgba(197, 139, 102, 0.18);
             --nav-bg: rgba(244, 239, 230, 0.85);
             --nav-border: rgba(51, 64, 47, 0.15);
-            --glow: rgba(197, 139, 102, 0.15);
+            --glow-primary: rgba(197, 139, 102, 0.22);
+            --glow-secondary: rgba(111, 122, 108, 0.15);
+            --dot-color: rgba(38, 49, 35, 0.08);
+            --stripe-color: rgba(38, 49, 35, 0.04);
         }
 
         @media (prefers-color-scheme: dark) {
@@ -28,9 +36,13 @@
                 --card-bg: #33402F;
                 --card-border: rgba(244, 239, 230, 0.12);
                 --accent: #C58B66;
+                --accent-soft: rgba(197, 139, 102, 0.15);
                 --nav-bg: rgba(38, 49, 35, 0.85);
                 --nav-border: rgba(244, 239, 230, 0.15);
-                --glow: rgba(197, 139, 102, 0.1);
+                --glow-primary: rgba(197, 139, 102, 0.16);
+                --glow-secondary: rgba(185, 194, 179, 0.08);
+                --dot-color: rgba(244, 239, 230, 0.07);
+                --stripe-color: rgba(244, 239, 230, 0.03);
             }
         }
 
@@ -51,6 +63,7 @@
             line-height: 1.6;
             animation: fadeInPage 0.5s ease-in-out;
             overflow-x: hidden;
+            position: relative;
         }
 
         @keyframes fadeInPage {
@@ -58,16 +71,43 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Atmospheric Background Glows */
+        /* Architectural Dot Matrix Texture Overlay */
+        .bg-dot-texture {
+            position: fixed;
+            inset: 0;
+            background-image: radial-gradient(var(--dot-color) 1.25px, transparent 1.25px);
+            background-size: 28px 28px;
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.9) 100%);
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.9) 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Atmospheric Ambient Gradients */
         .atmospheric-glow {
             position: absolute;
-            width: 600px;
-            height: 600px;
-            background: var(--glow);
-            filter: blur(120px);
+            width: 650px;
+            height: 650px;
+            background: radial-gradient(circle, var(--glow-primary) 0%, transparent 70%);
+            filter: blur(80px);
             border-radius: 50%;
             z-index: 0;
             pointer-events: none;
+        }
+
+        .atmospheric-glow.secondary {
+            width: 550px;
+            height: 550px;
+            background: radial-gradient(circle, var(--glow-secondary) 0%, transparent 70%);
+        }
+
+        /* Subtle Horizontal Gradient Divider */
+        .section-divider {
+            max-width: 1100px;
+            margin: 0 auto;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, var(--card-border) 25%, var(--accent) 50%, var(--card-border) 75%, transparent 100%);
+            opacity: 0.6;
         }
 
         /* Apple Pill Navigation */
@@ -90,7 +130,7 @@
         }
 
         nav.scrolled {
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.14);
         }
 
         nav a {
@@ -98,8 +138,8 @@
             text-decoration: none;
             font-size: 0.9rem;
             font-weight: 500;
-            opacity: 0.8;
-            transition: opacity 0.2s ease;
+            opacity: 0.85;
+            transition: opacity 0.2s ease, color 0.2s ease;
         }
 
         nav a:hover, nav a.active {
@@ -107,11 +147,25 @@
             color: var(--accent);
         }
 
-        .nav-logo {
+        .nav-logo-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            opacity: 1 !important;
+        }
+
+        .nav-logo-img {
+            height: 28px;
+            width: auto;
+            border-radius: 4px;
+        }
+
+        .nav-logo-text {
             font-family: 'Fraunces', serif;
             font-weight: 600;
             font-size: 1rem;
-            opacity: 1 !important;
+            color: var(--text-color);
+            white-space: nowrap;
         }
 
         /* Layout & Sections */
@@ -130,7 +184,7 @@
 
         /* Hero Section */
         .hero {
-            min-height: 90vh;
+            min-height: 92vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -139,17 +193,47 @@
             padding-top: 140px;
         }
 
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            border-radius: 9999px;
+            background: linear-gradient(135deg, var(--card-bg), transparent);
+            border: 1px solid var(--card-border);
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 24px;
+        }
+
+        .hero-badge-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: var(--accent);
+        }
+
         .hero h1 {
             font-size: clamp(2.8rem, 5vw, 4.5rem);
             line-height: 1.1;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
             letter-spacing: -0.02em;
+            max-width: 900px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--text-color) 30%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero p {
             font-size: clamp(1.1rem, 2vw, 1.3rem);
             color: var(--muted-text);
-            max-width: 650px;
+            max-width: 660px;
             margin-bottom: 40px;
         }
 
@@ -167,13 +251,14 @@
             border-radius: 9999px;
             text-decoration: none;
             font-weight: 500;
-            transition: transform 0.2s ease, opacity 0.2s ease;
+            transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
             display: inline-block;
         }
 
         .btn:hover {
             transform: translateY(-2px);
-            opacity: 0.9;
+            opacity: 0.92;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
         }
 
         .btn-outline {
@@ -186,40 +271,61 @@
             background-color: var(--card-bg);
         }
 
-        /* Overview / Narrative Q&A Section */
-        .overview-grid {
+        /* Overview & Services Grids */
+        .overview-grid, .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-top: 40px;
         }
 
-        .card {
-            background-color: var(--card-bg);
+        .card, .service-card {
+            background: linear-gradient(160deg, var(--card-bg) 0%, rgba(232, 224, 208, 0.4) 100%);
             border: 1px solid var(--card-border);
             border-radius: 20px;
             padding: 36px;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
 
-        .card:hover {
+        @media (prefers-color-scheme: dark) {
+            .card, .service-card {
+                background: linear-gradient(160deg, var(--card-bg) 0%, rgba(51, 64, 47, 0.55) 100%);
+            }
+        }
+
+        /* Subtle Top Accent Strip on Cards */
+        .card::before, .service-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), transparent);
+            opacity: 0.65;
+        }
+
+        .card:hover, .service-card:hover {
             transform: translateY(-4px);
+            border-color: var(--accent);
         }
 
-        .card h3 {
+        .card h3, .service-card h3 {
             font-size: 1.5rem;
             margin-bottom: 14px;
         }
 
-        .card p {
+        .card p, .service-card p {
             color: var(--muted-text);
             font-size: 0.95rem;
         }
 
-        /* Services & Vision Section */
+        /* Section Headers */
         .section-header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
         }
 
         .section-header h2 {
@@ -230,114 +336,146 @@
         .section-header p {
             color: var(--muted-text);
             font-size: 1.1rem;
+            max-width: 680px;
+            margin: 0 auto;
         }
 
-        /* Pricing Grid */
+        /* Pricing Grid & Enhanced Pricing Cards */
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
+            align-items: stretch;
         }
 
-/* Pricing Hierarchy & Featured Highlight */
-.pricing-card {
-    background-color: var(--card-bg);
-    border: 1px solid var(--card-border);
-    border-radius: 24px;
-    padding: 40px 32px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+        .pricing-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
 
-.pricing-card:hover {
-    transform: translateY(-4px);
-}
+        /* Featured Card with Subtle Diagonal Pinstripe Texture */
+        .pricing-card.featured {
+            border: 2px solid var(--accent);
+            background-image: repeating-linear-gradient(
+                -45deg,
+                transparent,
+                transparent 12px,
+                var(--stripe-color) 12px,
+                var(--stripe-color) 13px
+            );
+            box-shadow: 0 18px 40px -12px rgba(197, 139, 102, 0.25);
+            transform: scale(1.03);
+            z-index: 2;
+        }
 
-/* Highlighting the "Most Popular" Card */
-.pricing-card.featured {
-    border: 2px solid var(--accent);
-    box-shadow: 0 18px 40px -12px rgba(197, 139, 102, 0.25);
-    transform: scale(1.03);
-    z-index: 2;
-}
+        .popular-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--accent);
+            color: #263123;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 5px 16px;
+            border-radius: 9999px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            white-space: nowrap;
+        }
 
-.pricing-card.featured:hover {
-    transform: scale(1.03) translateY(-4px);
-}
+        .pricing-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
 
-.popular-badge {
-    position: absolute;
-    top: -14px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: var(--accent);
-    color: #263123;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    padding: 5px 16px;
-    border-radius: 9999px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    white-space: nowrap;
-}
+        .pricing-card > p {
+            color: var(--muted-text);
+            font-size: 0.95rem;
+        }
 
-/* Monthly (Primary) + Upfront (Smaller Secondary) Pricing */
-.price-stack {
-    margin: 22px 0 26px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--card-border);
-}
+        .price-stack {
+            margin: 22px 0 26px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--card-border);
+        }
 
-.price-monthly {
-    font-family: 'Fraunces', serif;
-    font-size: 2.75rem;
-    font-weight: 600;
-    line-height: 1.1;
-    color: var(--accent);
-}
+        .price-monthly {
+            font-family: 'Fraunces', serif;
+            font-size: 2.75rem;
+            font-weight: 600;
+            line-height: 1.1;
+            color: var(--accent);
+        }
 
-.price-monthly span {
-    font-family: system-ui, -apple-system, sans-serif;
-    font-size: 1rem;
-    font-weight: 400;
-    color: var(--muted-text);
-}
+        .price-monthly span {
+            font-family: system-ui, -apple-system, sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--muted-text);
+        }
 
-.price-upfront {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--text-color);
-    margin-top: 6px;
-    opacity: 0.85;
-}
+        .price-upfront {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 6px;
+            opacity: 0.85;
+        }
 
-/* Full-width Select Buttons */
-.select-btn {
-    width: 100%;
-    text-align: center;
-    margin-top: auto;
-    cursor: pointer;
-}
+        .features-list {
+            list-style: none;
+            margin-bottom: 30px;
+            flex-grow: 1;
+        }
 
-@media (max-width: 900px) {
-    .pricing-card.featured {
-        transform: none;
-    }
-    .pricing-card.featured:hover {
-        transform: translateY(-4px);
-    }
-}
+        .features-list li {
+            padding: 9px 0;
+            color: var(--muted-text);
+            font-size: 0.95rem;
+            border-bottom: 1px solid var(--card-border);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .features-list li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        .select-btn {
+            width: 100%;
+            text-align: center;
+            margin-top: auto;
+            cursor: pointer;
+        }
+
         /* Contact Section */
         .contact-container {
             max-width: 700px;
             margin: 0 auto;
-            background-color: var(--card-bg);
+            background: linear-gradient(180deg, var(--card-bg) 0%, rgba(232, 224, 208, 0.65) 100%);
             border: 1px solid var(--card-border);
             border-radius: 24px;
             padding: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .contact-container {
+                background: linear-gradient(180deg, var(--card-bg) 0%, rgba(51, 64, 47, 0.7) 100%);
+            }
         }
 
         .form-group {
@@ -360,11 +498,13 @@
             color: var(--text-color);
             font-family: inherit;
             font-size: 1rem;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
         }
 
         input:focus, textarea:focus {
             outline: none;
             border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-soft);
         }
 
         textarea {
@@ -375,20 +515,36 @@
         /* Footer */
         footer {
             text-align: center;
-            padding: 40px 20px;
+            padding: 60px 20px 45px;
             color: var(--muted-text);
-            font-size: 0.85rem;
+            font-size: 0.88rem;
             border-top: 1px solid var(--card-border);
             margin-top: 80px;
+            position: relative;
+            z-index: 1;
+            background: linear-gradient(to top, rgba(38, 49, 35, 0.06), transparent);
+        }
+
+        .footer-logo {
+            height: 76px;
+            width: auto;
+            margin-bottom: 18px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
         }
 
         @media (max-width: 768px) {
             nav {
                 padding: 8px 16px;
-                gap: 16px;
+                gap: 14px;
+                width: calc(100% - 32px);
+                justify-content: space-between;
             }
-            nav a:not(.nav-logo):not(:last-child) {
+            nav a:not(.nav-logo-link):not(:last-child) {
                 display: none;
+            }
+            .pricing-card.featured {
+                transform: none;
             }
             .contact-container {
                 padding: 30px 20px;
@@ -398,151 +554,163 @@
 </head>
 <body>
 
-    <div class="atmospheric-glow" style="top: 50px; left: 10%; opacity: 0.6;"></div>
-    <div class="atmospheric-glow" style="top: 1200px; right: 10%; opacity: 0.5;"></div>
+    <!-- Background Texture & Ambient Gradients -->
+    <div class="bg-dot-texture"></div>
+    <div class="atmospheric-glow" style="top: 40px; left: 8%;"></div>
+    <div class="atmospheric-glow secondary" style="top: 680px; right: 5%;"></div>
+    <div class="atmospheric-glow" style="top: 1650px; left: 12%;"></div>
 
     <!-- Apple Pill Navigation -->
     <nav id="navbar">
-        <a href="#hero" class="nav-logo">Cornerstone Digital</a>
+        <a href="#hero" class="nav-logo-link">
+            <img src="cornerstone-horizontal.svg" alt="Cornerstone Digital Logo" class="nav-logo-img">
+            <span class="nav-logo-text">Cornerstone Digital</span>
+        </a>
         <a href="#overview">Overview</a>
-        <a href="#services">Services</a>
+        <a href="#services">Philosophy</a>
         <a href="#pricing">Pricing</a>
         <a href="#contact" class="btn" style="padding: 6px 16px; font-size: 0.85rem;">Get in Touch</a>
     </nav>
 
     <!-- 1. Hero Section -->
     <section id="hero" class="hero">
-        <h1>High-Performance Web Design for Wilmington Businesses</h1>
-        <p>We craft Apple-inspired, narrative-driven digital platforms that elevate local brands, convert visitors effortlessly, and drive sustainable growth.</p>
+        <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            Serving the DE, PA & MD Tristate Region
+        </div>
+        <h1>High-Performance Web Design for <span>Tristate Businesses</span></h1>
+        <p>We craft Apple-inspired, narrative-driven digital platforms that elevate local brands, convert visitors effortlessly, and drive sustainable growth across Delaware, Pennsylvania, and Maryland.</p>
         <div class="cta-buttons">
             <a href="#pricing" class="btn">Explore Investment Tiers</a>
             <a href="#contact" class="btn btn-outline">Start a Project</a>
         </div>
     </section>
 
-    <!-- 2. Overview / Q&A Section -->
+    <div class="section-divider"></div>
+
+    <!-- 2. Overview Section -->
     <section id="overview">
         <div class="section-header">
             <h2>Clarity. Purpose. Craft.</h2>
-            <p>Designed specifically for local business leaders who value precision and design integrity.</p>
+            <p>Deliberate craftsmanship, minimalist architecture, and performance-driven digital growth for business leaders across the DE, PA, and MD tristate region.</p>
         </div>
         <div class="overview-grid">
             <div class="card">
-                <h3>Why Wilmington Businesses?</h3>
-                <p>Local businesses deserve world-class digital experiences that rival top-tier tech brands, helping you stand out in Delaware's growing market[cite: 1].</p>
+                <h3>Built for the Tristate Region</h3>
+                <p>Local businesses across Delaware, Pennsylvania, and Maryland deserve world-class digital experiences that rival top-tier tech brands, helping you stand out across the tristate region's competitive market.</p>
             </div>
             <div class="card">
                 <h3>System-Aware Engineering</h3>
-                <p>Your website automatically adapts to your client's preferred system theme, featuring refined earth tones and butter-smooth performance[cite: 1].</p>
+                <p>Your website automatically adapts to your client's preferred system theme, featuring refined earth tones and butter-smooth performance on every screen.</p>
             </div>
             <div class="card">
                 <h3>Conversion-First Architecture</h3>
-                <p>Every layout decision, typography choice, and interaction physics element is built to guide users naturally toward a project inquiry[cite: 1].</p>
+                <p>Every layout decision, typography choice, and interaction physics element is built to guide regional clients naturally toward a project inquiry.</p>
             </div>
         </div>
     </section>
 
-    <!-- 3. Services & Vision Section -->
+    <div class="section-divider"></div>
+
+    <!-- 3. Agency Philosophy & Services Section -->
     <section id="services">
         <div class="section-header">
-            <h2>Our Agency Philosophy</h2>
-            <p>Rooted in editorial elegance and robust technical performance.</p>
+            <h2>Agency Philosophy & Services</h2>
+            <p>Rooted in editorial elegance, minimalist structure, and robust technical performance.</p>
         </div>
-        <div class="overview-grid">
-            <div class="card">
-                <h3>Editorial Typography</h3>
-                <p>Using Fraunces serif headings paired with clean system sans-serif body copy to project instant high-end authority[cite: 1].</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>High-Performance Architecture</h3>
+                <p>Every website is engineered for lightning-fast load times, flawless responsiveness, and optimized regional search visibility from day one.</p>
             </div>
-            <div class="card">
-                <h3>Static Reliability</h3>
-                <p>Lightning-fast static HTML/CSS architecture hosted seamlessly on GitHub Pages for ultimate security and zero downtime[cite: 1].</p>
+            <div class="service-card">
+                <h3>Narrative-Driven Design</h3>
+                <p>We blend Apple-inspired minimalist aesthetics with clear, compelling copywriting that guides local clients naturally toward action.</p>
+            </div>
+            <div class="service-card">
+                <h3>Static Reliability & Security</h3>
+                <p>Clean, modern static HTML/CSS architecture hosted with enterprise-grade speed for zero plugin bloat, zero downtime, and complete peace of mind.</p>
             </div>
         </div>
     </section>
 
-<!-- 4. Transparent Pricing Tiers -->
+    <div class="section-divider"></div>
+
+    <!-- 4. Transparent Pricing Tiers -->
     <section id="pricing">
         <div class="section-header">
             <h2>Transparent Investment Tiers</h2>
-            <p>Accessible upfront builds paired with simple monthly care—or a tailored custom plan.</p>
+            <p>Flexible monthly partnerships or straightforward one-time builds designed to scale with your business goals.</p>
         </div>
-
         <div class="pricing-grid">
-            <!-- Tier 1: Starter -->
+            <!-- Starter Tier -->
             <div class="pricing-card">
                 <h3>Starter</h3>
-                <p style="color: var(--muted-text); font-size: 0.95rem;">Essential digital presence for emerging local businesses.</p>
-                
+                <p>Essential digital presence for emerging tristate businesses.</p>
                 <div class="price-stack">
-                    <div class="price-monthly">$99<span>/mo</span></div>
-                    <div class="price-upfront">+ $500 upfront build</div>
+                    <div class="price-monthly">$150<span>/mo</span></div>
+                    <div class="price-upfront">or $1,500 one-time build</div>
                 </div>
-
                 <ul class="features-list">
                     <li>Single-Page Custom Design</li>
-                    <li>System-Aware Dark/Light Mode</li>
+                    <li>System-Aware Dark & Light Mode</li>
                     <li>Mobile Responsive Layout</li>
-                    <li>Hosting, SSL &amp; Ongoing Updates</li>
-                    <li>Formspree Lead Form Integration</li>
+                    <li>Lead Capture Form Integration</li>
                 </ul>
-
-                <a href="#contact" class="btn btn-outline select-btn" onclick="selectPackage('Starter ($500 upfront + $99/mo)')">Select Starter</a>
+                <a href="#contact" class="btn btn-outline select-btn" onclick="selectPackage('Starter')">Select Starter</a>
             </div>
 
-            <!-- Tier 2: Growth (Most Popular) -->
+            <!-- Growth Tier (Featured) -->
             <div class="pricing-card featured">
                 <div class="popular-badge">Most Popular</div>
                 <h3>Growth</h3>
-                <p style="color: var(--muted-text); font-size: 0.95rem;">Multi-page immersive experience built to convert local traffic.</p>
-                
+                <p>Multi-page immersive experience for growing regional brands.</p>
                 <div class="price-stack">
-                    <div class="price-monthly">$149<span>/mo</span></div>
-                    <div class="price-upfront">+ $600 upfront build</div>
+                    <div class="price-monthly">$295<span>/mo</span></div>
+                    <div class="price-upfront">or $3,200 one-time build</div>
                 </div>
-
                 <ul class="features-list">
                     <li>Up to 5 Custom Pages</li>
                     <li>Advanced Narrative Layouts</li>
-                    <li>On-Page Local SEO Optimization</li>
-                    <li>Monthly Content Edits &amp; Analytics</li>
-                    <li>Priority Turnaround &amp; Support</li>
+                    <li>Smooth Interaction Physics</li>
+                    <li>Local Tristate SEO Optimization</li>
+                    <li>Priority Turnaround & Support</li>
                 </ul>
-
-                <a href="#contact" class="btn select-btn" onclick="selectPackage('Growth ($600 upfront + $149/mo)')">Select Growth</a>
+                <a href="#contact" class="btn select-btn" onclick="selectPackage('Growth')">Select Growth</a>
             </div>
 
-            <!-- Tier 3: Custom -->
+            <!-- Scale Tier -->
             <div class="pricing-card">
-                <h3>Custom</h3>
-                <p style="color: var(--muted-text); font-size: 0.95rem;">Tailored scope, e-commerce, or flexible payment plans for larger builds.</p>
-                
+                <h3>Scale</h3>
+                <p>Comprehensive digital overhaul for established enterprises.</p>
                 <div class="price-stack">
-                    <div class="price-monthly">Custom<span>/mo</span></div>
-                    <div class="price-upfront">Flexible upfront deposit</div>
+                    <div class="price-monthly">$495<span>/mo</span></div>
+                    <div class="price-upfront">or $5,500+ custom build</div>
                 </div>
-
                 <ul class="features-list">
                     <li>Full Multi-Page Architecture</li>
-                    <li>Booking, E-Commerce, or Payment Plans</li>
-                    <li>Custom Copywriting &amp; Brand Assets</li>
-                    <li>Custom Integrations &amp; Automations</li>
-                    <li>Dedicated Maintenance Support</li>
+                    <li>Custom Interactive Elements</li>
+                    <li>Comprehensive Content Strategy</li>
+                    <li>Dedicated Ongoing Maintenance</li>
                 </ul>
-
-                <a href="#contact" class="btn btn-outline select-btn" onclick="selectPackage('Custom Package')">Select Custom</a>
+                <a href="#contact" class="btn btn-outline select-btn" onclick="selectPackage('Scale')">Select Scale</a>
             </div>
         </div>
     </section>
+
+    <div class="section-divider"></div>
 
     <!-- 5. Contact Section (Formspree) -->
     <section id="contact">
         <div class="section-header">
             <h2>Let's Build Together</h2>
-            <p>Ready to elevate your digital presence? Send us a message below.</p>
+            <p>Ready to elevate your digital presence across the tristate region? Send us a message below.</p>
         </div>
         <div class="contact-container">
             <form action="https://formspree.io/f/xppdzjyp" method="POST">
-                <input type="hidden" name="_next" value="https://https://rileyaidan77-ops.github.io/cornerstonedigital.it//thank-you.html">
+                <!-- Update the URL below to match your live domain or GitHub Pages URL -->
+                <input type="hidden" name="_next" value="https://YOUR-ACTUAL-WEBSITE-URL.com/thank-you.html">
+                
                 <div class="form-group">
                     <label for="name">Your Name</label>
                     <input type="text" id="name" name="name" required placeholder="Jane Doe">
@@ -566,7 +734,8 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Cornerstone Digital. Crafted for Wilmington, Delaware businesses.</p>
+        <img src="cornerstone-stacked-dark.svg" alt="Cornerstone Digital Brand Mark" class="footer-logo">
+        <p>&copy; 2026 Cornerstone Digital. Crafted for businesses across the DE, PA, and MD tristate region.</p>
     </footer>
 
     <script>
@@ -579,6 +748,14 @@
                 nav.classList.remove('scrolled');
             }
         });
+
+        // Auto-fill package input when clicking a pricing tier CTA
+        function selectPackage(tierName) {
+            const packageInput = document.getElementById('package');
+            if (packageInput) {
+                packageInput.value = tierName;
+            }
+        }
     </script>
 </body>
 </html>
